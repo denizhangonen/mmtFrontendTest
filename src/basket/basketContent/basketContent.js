@@ -6,7 +6,7 @@ const basketContent = props => {
   let itemsTable = null;
   if (props.items.length > 0) {
     itemsTable = props.items.map(i => {
-      return <BasketItem item={i} removeItem={props.removeItem} />;
+      return <BasketItem key={i.id} item={i} removeItem={props.removeItem} />;
     });
   }
   return <div>{itemsTable}</div>;
