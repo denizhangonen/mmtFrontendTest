@@ -1,0 +1,9 @@
+.basket {
+  text-align: center;
+  width: 500px;
+  border: 1px solid red;
+  /* temp styles */
+  margin-left: 220px;
+  margin-top: 120px;
+  /* end of temp styles */
+}
