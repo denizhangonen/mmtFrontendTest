@@ -18,6 +18,7 @@ export class Basket extends Component {
 
   removeItemsHandler = () => {
     // loop through items and reset quantities to zero and do keep items in the basket
+    console.log('removeItems has been called')
   };
 
   render() {
