@@ -3,6 +3,8 @@ import React, { Component } from "react";
 import BasketContent from "./basketContent/basketContent";
 import BasketFooter from "./basketFooter/basketFooter";
 
+import "./basket.css";
+
 export class Basket extends Component {
   state = {
     items: [],
@@ -18,6 +20,7 @@ export class Basket extends Component {
   };
 
   render() {
+    console.log("basket says hi");
     const { items, totalPrice } = this.state;
     let basketContent = null;
     // If there are any items update content otherwise prevent rendering
