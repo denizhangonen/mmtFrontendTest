@@ -7,8 +7,9 @@ import "./basket.css";
 
 export class Basket extends Component {
   state = {
-      items: [],
-    // items: [{ title: "test pro 1", quantity: 3, price: 5 }],
+    // items: [],
+    items: [{ id: '1', title: "test pro 1", quantity: 3, price: 5 },
+    { id: '101', title: "test pro 2", quantity: 5, price: 9 }],
     totalPrice: 0
   };
 
@@ -18,7 +19,7 @@ export class Basket extends Component {
 
   removeItemsHandler = () => {
     // loop through items and reset quantities to zero and do keep items in the basket
-    console.log('removeItems has been called')
+    console.log("removeItems has been called");
   };
 
   render() {
