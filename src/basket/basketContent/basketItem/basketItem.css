@@ -1,0 +1,7 @@
+.item-row > td {
+  padding: 20px;
+}
+
+.item-row > td > a :hover {
+  cursor: pointer;
+}
