@@ -7,7 +7,8 @@ import "./basket.css";
 
 export class Basket extends Component {
   state = {
-    items: [],
+      items: [],
+    // items: [{ title: "test pro 1", quantity: 3, price: 5 }],
     totalPrice: 0
   };
 
