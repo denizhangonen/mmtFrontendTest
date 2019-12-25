@@ -1,15 +1,31 @@
 import React, { Component } from "react";
 
+import BasketContent from "./basketContent/basketContent";
+import BasketFooter from "./basketFooter/basketFooter";
+
 export class Basket extends Component {
-    state = {
+  state = {
+    items: [],
+    totalPrice: 0
+  };
 
-    }
+  componentDidMount() {
+    // get items
+  }
 
-    render () {
-        return (
-            <div>Welcome to Basket</div>
-        )
+  render() {
+    const { items, totalPrice } = this.state;
+    let basketContent = null;
+    if (items.length > 0) {
+      basketContent = <BasketContent items={items} />;
     }
+    return (
+      <div>
+        {basketContent}
+        <BasketFooter totalPrice={totalPrice} />
+      </div>
+    );
+  }
 }
 
 export default Basket;
