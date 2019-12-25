@@ -17,7 +17,7 @@ export class Basket extends Component {
     this.getBasketItems();
   }
 
-  getBasketItems = () => {
+  getBasketItems = () => {      
     this.setState({
       items: [
         { id: "1", title: "test pro 1", quantity: 3, price: 5 },
@@ -28,8 +28,11 @@ export class Basket extends Component {
   };
 
   removeItemsHandler = () => {
-    // loop through items and reset quantities to zero and do keep items in the basket
-    console.log("removeItems has been called");
+    // loop through items and reset quantities to zero and do keep items in the basket    
+    const resetedItems = this.state.items.map(i => {
+      return { ...i, quantity: 0 };
+    });
+    this.setState({ items: resetedItems, totalPrice: 0 });
   };
 
   removeItemHandler = id => {
