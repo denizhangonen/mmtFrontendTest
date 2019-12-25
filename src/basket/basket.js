@@ -13,16 +13,25 @@ export class Basket extends Component {
     // get items
   }
 
+  removeItemsHandler = () => {
+    // loop through items and reset quantities to zero and do keep items in the basket
+  };
+
   render() {
     const { items, totalPrice } = this.state;
     let basketContent = null;
+    // If there are any items update content otherwise prevent rendering
     if (items.length > 0) {
       basketContent = <BasketContent items={items} />;
     }
+
     return (
-      <div>
+      <div className="basket">
         {basketContent}
-        <BasketFooter totalPrice={totalPrice} />
+        <BasketFooter
+          totalPrice={totalPrice}
+          removeItems={this.removeItemsHandler}
+        />
       </div>
     );
   }
