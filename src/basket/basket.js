@@ -4,7 +4,6 @@ import BasketContent from "./basketContent/basketContent";
 import BasketFooter from "./basketFooter/basketFooter";
 
 import "./basket.css";
-import basketItem from "./basketContent/basketItem/basketItem";
 
 export class Basket extends Component {
   state = {
