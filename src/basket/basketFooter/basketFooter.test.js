@@ -1,6 +1,6 @@
 import React from "react";
 
-import { shallow, configure } from "enzyme";
+import { shallow, configure, mount } from "enzyme";
 import Adapter from "enzyme-adapter-react-16";
 
 import BasketFooter from "./basketFooter";
@@ -30,5 +30,13 @@ describe("<BasketFooter /> component tests", () => {
     const totalPrice = 88;
     wrapper.setProps({ totalPrice: totalPrice });
     expect(wrapper.html()).toContain(totalPrice);
+  });
+
+  it("should call the mockFunc when a is clicked", () => {
+    const mockFunc = jest.fn();    
+    wrapper.setProps({removeItems : mockFunc});
+    expect(mockFunc).toBeCalledTimes(0);
+    wrapper.find("a").simulate("click");
+    expect(mockFunc).toBeCalledTimes(1);
   });
 });
