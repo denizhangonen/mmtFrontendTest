@@ -16,7 +16,7 @@ const basketContent = props => {
       );
     });
   }
-  return <div>{itemsTable}</div>;
+  return <div className="basketContent">{itemsTable}</div>;
 };
 
 export default basketContent;
