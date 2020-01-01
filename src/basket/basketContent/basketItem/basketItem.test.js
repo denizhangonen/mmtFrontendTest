@@ -36,9 +36,25 @@ describe("<BasketItem /> Tests", () => {
     expect(wrapper.find(".item-price").html()).toContain(price);
   });
 
-  it("should render quantity prop in the input element", () => {});
+  it("should render quantity prop in the input element", () => {
+    const quantity = 505;
+    wrapper.setProps({ item: { quantity: quantity } });
 
-  it("should call mock function when a is clicked", () => {});
+    expect(wrapper.find("input").props().value).toEqual(quantity);
+  });
 
-  it("should call mock quantityUpdated func when input changed", () => {});
+  it("should call mock function when a is clicked", () => {
+    const mockFuncRemove = jest.fn();
+    wrapper.setProps({ removeItem: mockFuncRemove });
+    expect(mockFuncRemove).toBeCalledTimes(0);
+    wrapper.find("a").simulate("click");
+    expect(mockFuncRemove).toHaveBeenCalled();
+  });
+
+  it("should call mock quantityUpdated func when input changed", () => {
+    const mockFuncQuantityUpdate = jest.fn();
+    wrapper.setProps({ quantityUpdated: mockFuncQuantityUpdate });
+    wrapper.find("input").simulate("change", { target: { value: (1,2) } });
+    expect(mockFuncQuantityUpdate).toHaveBeenCalled();
+  });
 });
